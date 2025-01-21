@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cu2rongdz-nodejs-gitops
+  description: This is GitOps manifest for cu2rongdz-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: cu2rongdz-nodejs
+    backstage.io/kubernetes-id: cu2rongdz-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cu2rongdz-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cu2rongdz-nodejs
